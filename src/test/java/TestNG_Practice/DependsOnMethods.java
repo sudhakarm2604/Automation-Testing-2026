@@ -1,0 +1,98 @@
+package TestNG_Practice;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import Util.Utils;
+
+@Listeners(TestListener.class)
+
+public class DependsOnMethods extends Utils {
+
+	WebDriver driver;
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
+	@BeforeTest
+	public void setUp() {
+
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+	}
+
+	@Test
+	public void launchAmazon() {
+
+		driver.get("https://www.amazon.in/");
+
+		// throw new RuntimeException("Intentional Exception ");
+
+	}
+
+	@Test(dependsOnMethods = "launchAmazon")
+	public void search() {
+
+		WebElement search = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		search.sendKeys("iphone 17 pro max" + Keys.ENTER);
+
+	}
+
+	@Test(dependsOnMethods = "search")
+	public void addToCart() {
+
+		By addToCartButton = By
+				.xpath("//div[@data-component-type='s-search-result'] //button[@name='submit.addToCart']");
+
+		int size = driver.findElements(addToCartButton).size();
+
+		for (int i = 0; i < size; i++) {
+
+			List<WebElement> freshProducts = driver.findElements(addToCartButton);
+
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+			wait.until(ExpectedConditions.elementToBeClickable(freshProducts.get(i))).click();
+
+		}
+
+	}
+
+	@Test(dependsOnMethods = "addToCart")
+	public void cartPage() {
+
+		driver.findElement(By.xpath("//a[@id='nav-cart']")).click();
+
+		WebElement subtotal = driver.findElement(By.xpath("//span[@id='sc-subtotal-amount-activecart']"));
+
+		System.out.println(subtotal.getText());
+	}
+
+	@AfterTest
+	public void tearDown() {
+
+		if (driver != null) {
+
+			driver.manage().deleteAllCookies();
+			driver.quit();
+
+		}
+
+	}
+
+}
