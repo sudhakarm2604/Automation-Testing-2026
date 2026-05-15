@@ -31,11 +31,11 @@ public class TestNG_Basics_Test {
 
 	}
 
-	@Parameters({ "Url" })
+	@Parameters("Url")
 	@Test
-	public void Test1(String url) throws IOException {
+	public void Test1(String Url) throws IOException {
 
-		driver.get(url);
+		driver.get(Url);
 
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium" + Keys.ENTER);
 
@@ -69,7 +69,7 @@ public class TestNG_Basics_Test {
 
 		if (driver != null) {
 
-		//	driver.quit();
+			// driver.quit();
 
 		}
 
