@@ -42,6 +42,7 @@ public class DependsOnMethods extends Utils {
 		return new Object[][] {
 
 				{ "apple macbook air m13" },
+				{ "samsung galaxy s21" },
 
 		};
 
