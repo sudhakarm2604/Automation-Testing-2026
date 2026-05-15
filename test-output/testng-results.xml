@@ -1,33 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-15T12:39:38 IST" name="Default suite" finished-at="2026-05-15T12:39:59 IST" duration-ms="20434">
+  <suite started-at="2026-05-15T12:59:22 IST" name="Default suite" finished-at="2026-05-15T12:59:54 IST" duration-ms="31886">
     <groups>
     </groups>
-    <test started-at="2026-05-15T12:39:38 IST" name="Default test" finished-at="2026-05-15T12:39:59 IST" duration-ms="20434">
+    <test started-at="2026-05-15T12:59:22 IST" name="Default test" finished-at="2026-05-15T12:59:54 IST" duration-ms="31886">
       <class name="TestNG_Practice.DependsOnMethods">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG_Practice.DependsOnMethods@45752059]" started-at="2026-05-15T12:39:38 IST" name="setUp" finished-at="2026-05-15T12:39:40 IST" duration-ms="1831" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:22 IST" name="setUp" finished-at="2026-05-15T12:59:24 IST" duration-ms="1673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="launchAmazon()[pri:0, instance:TestNG_Practice.DependsOnMethods@45752059]" started-at="2026-05-15T12:39:40 IST" name="launchAmazon" finished-at="2026-05-15T12:39:41 IST" duration-ms="1410" status="PASS">
+        <test-method signature="launchAmazon()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:24 IST" name="launchAmazon" finished-at="2026-05-15T12:59:26 IST" duration-ms="2404" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchAmazon -->
-        <test-method signature="search()[pri:0, instance:TestNG_Practice.DependsOnMethods@45752059]" started-at="2026-05-15T12:39:41 IST" name="search" finished-at="2026-05-15T12:39:46 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="5015" status="PASS">
+        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:26 IST" name="search" data-provider="searchData" finished-at="2026-05-15T12:59:29 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="2896" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[apple macbook air m13]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search -->
-        <test-method signature="addToCart()[pri:0, instance:TestNG_Practice.DependsOnMethods@45752059]" started-at="2026-05-15T12:39:46 IST" name="addToCart" finished-at="2026-05-15T12:39:56 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.search" duration-ms="9255" status="PASS">
+        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:29 IST" name="search" data-provider="searchData" finished-at="2026-05-15T12:59:34 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="4517" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iphone 15 pro max]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search -->
+        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:34 IST" name="search" data-provider="searchData" finished-at="2026-05-15T12:59:36 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="2489" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iphone 17 pro max 512gb]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search -->
+        <test-method signature="addToCart()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:36 IST" name="addToCart" finished-at="2026-05-15T12:59:50 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.search" duration-ms="14460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method signature="cartPage()[pri:0, instance:TestNG_Practice.DependsOnMethods@45752059]" started-at="2026-05-15T12:39:56 IST" name="cartPage" finished-at="2026-05-15T12:39:58 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.addToCart" duration-ms="2510" status="PASS">
+        <test-method signature="cartPage()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:50 IST" name="cartPage" finished-at="2026-05-15T12:59:53 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.addToCart" duration-ms="2904" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cartPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG_Practice.DependsOnMethods@45752059]" started-at="2026-05-15T12:39:58 IST" name="tearDown" finished-at="2026-05-15T12:39:59 IST" duration-ms="325" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T12:59:53 IST" name="tearDown" finished-at="2026-05-15T12:59:54 IST" duration-ms="430" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -36,6 +37,16 @@ public class DependsOnMethods extends Utils {
 
 	}
 
+	@DataProvider(name = "searchData")
+	public Object[][] getSearchData() {
+		return new Object[][] {
+
+				{ "apple macbook air m13" },
+
+		};
+
+	}
+
 	@Test
 	public void launchAmazon() {
 
@@ -45,11 +56,13 @@ public class DependsOnMethods extends Utils {
 
 	}
 
-	@Test(dependsOnMethods = "launchAmazon")
-	public void search() {
+	@Test(dependsOnMethods = "launchAmazon", dataProvider = "searchData")
+	public void search(String searchData) {
 
 		WebElement search = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		search.sendKeys("apple air m13 " + Keys.ENTER);
+
+		search.clear();
+		search.sendKeys(searchData + Keys.ENTER);
 
 	}
 
