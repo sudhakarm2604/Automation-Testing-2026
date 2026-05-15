@@ -32,14 +32,15 @@ public class DependsOnMethods extends Utils {
 
 	@BeforeTest
 	public void setUp() {
-	    ChromeOptions options = new ChromeOptions();
-	    options.addArguments("--headless=new");
-	    options.setPageLoadStrategy(PageLoadStrategy.NORMAL); // Wait for full page load
-	    
-	    driver = new ChromeDriver(options);
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // Add page load timeout
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless=new");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--disable-gpu");
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // Add page load timeout
 	}
 
 	@DataProvider(name = "searchData")
