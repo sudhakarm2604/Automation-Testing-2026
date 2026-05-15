@@ -69,19 +69,17 @@ public class DependsOnMethods extends Utils {
 	@Test(dependsOnMethods = "search")
 	public void addToCart() {
 
-		By addToCartButton = By
-				.xpath("//div[@data-component-type='s-search-result'] //button[@name='submit.addToCart']");
+		List<WebElement> products = driver.findElements(
+				By.xpath("//div[@data-component-type='s-search-result'] //button[@name='submit.addToCart']"));
 
-		int size = driver.findElements(addToCartButton).size();
+		for (WebElement product : products) {
 
-		for (int i = 0; i < size; i++) {
+			if (product.isDisplayed()) {
 
-			List<WebElement> freshProducts = driver.findElements(addToCartButton);
+				product.click();
+				break;
 
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-			wait.until(ExpectedConditions.elementToBeClickable(freshProducts.get(i))).click();
-
+			}
 		}
 
 	}
