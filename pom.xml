@@ -42,11 +42,5 @@
 			<scope>compile</scope>
 		</dependency>
 
-
-		<dependency>
-			<groupId>Selenium_Practice_2026</groupId>
-			<artifactId>Selenium_Practice_2026</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 </project>
