@@ -49,7 +49,7 @@ public class DependsOnMethods extends Utils {
 	public void search() {
 
 		WebElement search = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		search.sendKeys("iphone 17 pro max" + Keys.ENTER);
+		search.sendKeys("apple air m13 " + Keys.ENTER);
 
 	}
 
