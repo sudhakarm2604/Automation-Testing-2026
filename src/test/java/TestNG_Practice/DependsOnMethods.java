@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,14 +32,14 @@ public class DependsOnMethods extends Utils {
 
 	@BeforeTest
 	public void setUp() {
-
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless=new");
-
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
+	    ChromeOptions options = new ChromeOptions();
+	    options.addArguments("--headless=new");
+	    options.setPageLoadStrategy(PageLoadStrategy.NORMAL); // Wait for full page load
+	    
+	    driver = new ChromeDriver(options);
+	    driver.manage().window().maximize();
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // Add page load timeout
 	}
 
 	@DataProvider(name = "searchData")
@@ -63,7 +64,7 @@ public class DependsOnMethods extends Utils {
 	@Test(dependsOnMethods = "launchAmazon", dataProvider = "searchData")
 	public void search(String searchData) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 		WebElement search = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='twotabsearchtextbox']")));
