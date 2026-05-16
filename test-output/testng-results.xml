@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-15T19:20:37 IST" name="Default suite" finished-at="2026-05-15T19:20:48 IST" duration-ms="11053">
+  <suite started-at="2026-05-15T20:58:51 IST" name="Default suite" finished-at="2026-05-15T20:59:18 IST" duration-ms="27637">
     <groups>
     </groups>
-    <test started-at="2026-05-15T19:20:37 IST" name="Default test" finished-at="2026-05-15T19:20:48 IST" duration-ms="11053">
+    <test started-at="2026-05-15T20:58:51 IST" name="Default test" finished-at="2026-05-15T20:59:18 IST" duration-ms="27637">
       <class name="TestNG_Practice.DependsOnMethods">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:37 IST" name="setUp" finished-at="2026-05-15T19:20:39 IST" duration-ms="1898" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:58:51 IST" name="setUp" finished-at="2026-05-15T20:59:08 IST" duration-ms="17673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="launchAmazon()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:39 IST" name="launchAmazon" finished-at="2026-05-15T19:20:41 IST" duration-ms="1239" status="PASS">
+        <test-method signature="launchAmazon()[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:59:08 IST" name="launchAmazon" finished-at="2026-05-15T20:59:09 IST" duration-ms="959" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchAmazon -->
-        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:41 IST" name="search" data-provider="searchData" finished-at="2026-05-15T19:20:44 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="3699" status="PASS">
+        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:59:09 IST" name="search" data-provider="searchData" finished-at="2026-05-15T20:59:14 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="4117" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,7 +26,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search -->
-        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:44 IST" name="search" data-provider="searchData" finished-at="2026-05-15T19:20:46 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="2051" status="PASS">
+        <test-method signature="search(java.lang.String)[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:59:14 IST" name="search" data-provider="searchData" finished-at="2026-05-15T20:59:16 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.launchAmazon" duration-ms="1920" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,15 +37,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search -->
-        <test-method signature="addToCart()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:46 IST" name="addToCart" finished-at="2026-05-15T19:20:47 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.search" duration-ms="214" status="PASS">
+        <test-method signature="addToCart()[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:59:16 IST" name="addToCart" finished-at="2026-05-15T20:59:16 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.search" duration-ms="422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method signature="cartPage()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:47 IST" name="cartPage" finished-at="2026-05-15T19:20:48 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.addToCart" duration-ms="1562" status="PASS">
+        <test-method signature="cartPage()[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:59:16 IST" name="cartPage" finished-at="2026-05-15T20:59:18 IST" depends-on-methods="TestNG_Practice.DependsOnMethods.addToCart" duration-ms="1977" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cartPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG_Practice.DependsOnMethods@10683d9d]" started-at="2026-05-15T19:20:48 IST" name="tearDown" finished-at="2026-05-15T19:20:48 IST" duration-ms="296" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG_Practice.DependsOnMethods@385c9627]" started-at="2026-05-15T20:59:18 IST" name="tearDown" finished-at="2026-05-15T20:59:18 IST" duration-ms="429" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
