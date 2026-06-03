@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG_Practice.TestNG_Basics_Test">
+      <class name="TestNG_Practice.DependsOnMethods">
         <methods>
-          <include name="setup"/>
-          <include name="Test1"/>
-          <include name="teardown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="addToCart"/>
+          <include name="cartPage"/>
+          <include name="launchAmazon"/>
+          <include name="search"/>
         </methods>
-      </class> <!-- TestNG_Practice.TestNG_Basics_Test -->
+      </class> <!-- TestNG_Practice.DependsOnMethods -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
