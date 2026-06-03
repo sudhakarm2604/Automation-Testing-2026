@@ -36,10 +36,10 @@ public class DependsOnMethods extends Utils {
 	@BeforeTest
 	public void setUp() throws MalformedURLException {
 		ChromeOptions options = new ChromeOptions();
-		// options.addArguments("--headless=new");
+		options.addArguments("--headless=new");
 		
 
-		driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+		//driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
 
 		options.addArguments(
 				"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
