@@ -39,7 +39,6 @@ public class DependsOnMethods extends Utils {
 	    options.addArguments("--headless=new");
 	    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
 	    
-	    // Remove hardcoded Windows path - use temp directory if needed
 	    String tempDir = System.getProperty("java.io.tmpdir");
 	    options.addArguments("user-data-dir=" + tempDir + "/chrome-profile");
 	    
