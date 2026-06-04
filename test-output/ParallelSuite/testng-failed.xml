@@ -4,13 +4,16 @@
   <test thread-count="2" parallel="methods" name="ThreadLocalTest(failed)">
     <parameter name="Url" value="https://www.amazon.in/"/>
     <classes>
-      <class name="TestNG_Practice.ThreadLocal">
+      <class name="TestNG_Practice.DependsOnMethods">
         <methods>
           <include name="tearDown"/>
-          <include name="testAmazon"/>
-          <include name="testGoogle"/>
+          <include name="setUp"/>
+          <include name="addToCart"/>
+          <include name="cartPage"/>
+          <include name="launchAmazon"/>
+          <include name="search"/>
         </methods>
-      </class> <!-- TestNG_Practice.ThreadLocal -->
+      </class> <!-- TestNG_Practice.DependsOnMethods -->
     </classes>
   </test> <!-- ThreadLocalTest(failed) -->
 </suite> <!-- Failed suite [ParallelSuite] -->

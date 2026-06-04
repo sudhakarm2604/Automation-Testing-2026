@@ -34,20 +34,25 @@ public class DependsOnMethods extends Utils {
 	}
 
 	@BeforeTest
-	public void setUp() throws MalformedURLException {
-	    ChromeOptions options = new ChromeOptions();
-	    options.addArguments("--headless=new");
-	    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
-	    
-	    String tempDir = System.getProperty("java.io.tmpdir");
-	    options.addArguments("user-data-dir=" + tempDir + "/chrome-profile");
-	    
-	    driver = new ChromeDriver(options);
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+	public void setUp() throws Exception {
+
+		ChromeOptions options = new ChromeOptions();
+
+		options.addArguments("--headless=new");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+
+		options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+				+ "AppleWebKit/537.36 (KHTML, like Gecko) " + "Chrome/115.0.0.0 Safari/537.36");
+
+		driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+
+		// driver = new ChromeDriver(options);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 	}
-	
+
 	@DataProvider(name = "searchData")
 	public Object[][] getSearchData() {
 		return new Object[][] {
